@@ -56,5 +56,14 @@ describe Board do
       expect(board.checkwinner).to eql(true)
     end
   end
+  describe '#playerturn' do
+    it 'if it is a valid input then it returns false for successfully assigning respective player turn in board' do
+      board = Board.new
+      expect(board.playerturn(2, 0)).to eql(false)
+      expect(board.playerturn(0, 1)).to eql(true)
+      expect(board.playerturn(9, 1)).to eql(false)
+      expect(board.playerturn(10, 1)).to eql(true)
+    end
+  end
 end
 # rubocop: enable Metrics/BlockLength
